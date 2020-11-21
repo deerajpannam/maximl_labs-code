@@ -1,0 +1,19 @@
+#Python Solution:
+
+s = input()
+k=0
+ans = 0
+for i in range(1,len(s)+1):
+    for j in range(0,len(s)-k):
+        if (ans<len(set(s[j:j+i]))):
+            ans = len(s[j:j+i])
+    k+=1
+print(ans)
+
+
+#Explanation:
+#
+#s  => is string "abcda"
+#s[j:j+i]  => is substring,
+#set(s[j:j+i])  => is unique elements in substring
+#len(set(s[j:j+i]))   => is length of unique element in substring
